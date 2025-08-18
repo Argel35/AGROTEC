@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Your Products - AGROTEC</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
+
+    .section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 120px 100px;
+      min-height: 100vh;
+    }
+
+    .left-content {
+      max-width: 50%;
+    }
+
+    .left-content h2 {
+      font-size: 60px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .left-content p {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 30px;
+    }
+
+    .buttons button {
+      font-size: 24px;
+      padding: 22px 36px;
+      border-radius: 14px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+
+    .add-product {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .add-product::before {
+      content: '+';
+      font-size: 30px;
+      margin-right: 14px;
+    }
+
+    .import {
+      background-color: #fff;
+      color: #000;
+      border: 3px solid #ccc;
+    }
+
+    .import::before {
+      content: '⭳'; /* Unicode download icon */
+      font-size: 28px;
+      margin-right: 14px;
+    }
+
+    .right-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 40px;
+      max-width: 500px;
+    }
+
+    .right-images img {
+      width: 140px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 1000px) {
+      .section {
+        flex-direction: column;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .left-content, .right-images {
+        max-width: 100%;
+      }
+
+      .right-images {
+        justify-content: center;
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <div class="left-content">
+      <h2>Add your products</h2>
+      <p>Start by stocking your store with products that your customers will love.</p>
+      <div class="buttons">
+        <button class="add-product">Add product</button>
+        <button class="import">Import</button>
+      </div>
+    </div>
+
+    <div class="right-images">
+      <img src="https://www.vegalomartina.cl/wp-content/uploads/2023/05/ZANAHORIAS.jpg" alt="Carrot"/>
+      <img src="https://agroindustrial-sa.com/wp-content/uploads/2022/01/pepino.jpg" alt="Cucumber"/>
+      <img src="https://greengarden.ph/cdn/shop/products/LINE_ALBUM_PICTURE_230412_85.jpg?v=1681290016" alt="Cabbage"/>
+      <img src="https://www.kroger.com/product/images/large/front/0000000094799" alt="Tomato"/>
+    </div>
+  </div>
+
+</body>
+</html>
