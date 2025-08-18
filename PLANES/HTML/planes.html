@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Planes de Suscripción</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #25452d;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      background-color: #a58afc;
+      padding: 5px 15px;
+      border-radius: 12px;
+      font-size: 14px;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .plans {
+      display: flex;
+      gap: 20px;
+    }
+
+    .plan {
+      background-color: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      width: 230px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .plan.highlight {
+      transform: scale(1.05);
+      border: 3px solid #d7f6dd;
+    }
+
+    .plan h2 {
+      margin-bottom: 5px;
+      color: #446b1f;
+    }
+
+    .plan p {
+      font-size: 13px;
+      color: #555;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 15px;
+    }
+
+    .features li {
+      margin-bottom: 5px;
+    }
+
+    .features li::before {
+      content: "✔️";
+      margin-right: 6px;
+      color: green;
+    }
+
+    .price {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+        line-height: 1.4;
+    }
+    
+
+    .select-button {
+      width: 80%;
+      height: 35px;
+      background-color: #202020;
+      border-radius: 15px;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .footer-links {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      width: 450px;
+      font-size: 14px;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      .plans {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Choose the plan that works best for you</h1>
+  <div class="subtitle">You can change or cancel anytime</div>
+
+  <div class="plans">
+    <div class="plan">
+      <h2>Basic</h2>
+      <p>For individual entrepreneurs</p>
+      <div class="price">(FREE) 0$<br>MONTH</div>
+      <ul class="features">
+        <li>Unlimited posts</li>
+        <li>1 Promotion per week.</li>
+        <li>One week free of PRO plan</li>
+        <li>Free workshops 2 times a year.</li>
+      </ul>
+      <button class="select-button">Try Basic</button>
+    </div>
+
+    <div class="plan highlight">
+      <h2>Pro Farmer</h2>
+      <p>For small teams</p>
+      <div class="price">9.99 $<br>MONTH</div>
+      <ul class="features">
+        <li>Unlimited posts</li>
+        <li>Advertising.</li>
+        <li>Boosting.</li>
+        <li>Cold email marketing</li>
+        <li>Preferencial access</li>
+      </ul>
+      <button class="select-button" style="background-color: #4fa56c;">Try Pro Farmer</button>
+    </div>
+
+    <div class="plan">
+      <h2>AgroElite</h2>
+      <p>As your business scales</p>
+      <div class="price">19.99 $<br>MONTH</div>
+      <ul class="features">
+        <li>Workshops and seminars with certifications.</li>
+        <li>Unlimited Advertising.</li>
+        <li>Unlimited access to post.</li>
+        <li>Couching.</li>
+        <li>Coustumer Service</li>
+        <li>Preferencial access</li>
+      </ul>
+      <button class="select-button">Try AgroElite</button>
+    </div>
+  </div>
+
+  <div class="footer-links">
+    <a href="#">View plan information</a>
+    <a href="#">Skip, I'll decide later ></a>
+  </div>
+
+</body>
+</html>
