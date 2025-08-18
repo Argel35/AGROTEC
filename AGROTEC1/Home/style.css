@@ -1,0 +1,358 @@
+* { /* aqui van nuestros encabezados*/
+  margin: 0; /* Espacio transparente entre el contenido y el borde. NO TOCAR */
+  padding: 0;/* Espacio transparente fuera del borde. NO TOCAR */
+  box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+.beneficios {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 50px 20px;
+}
+
+.item {
+    text-align: center;
+    max-width: 220px;
+}
+
+.icono {
+    background-color: #d6f0c2;
+    padding: 25px;
+    border-radius: 30% 50% 40% 60% / 50% 40% 60% 50%;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.icono img {
+    width: 50px;
+    height: 50px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+h3 span {
+    font-weight: bold;
+}
+
+p {
+    color: #ffffff;
+    font-size: 14px;
+    margin: 8px 0 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: black;
+    color: white;
+}
+body {/* esta linea de codigo son los tipos de letras que se usaran*/
+  font-family: 'Montserrat', sans-serif;
+  min-height: 200vh;
+}
+
+/* -------------------------------------------------------------------------- */
+/* AREA DEL HOME */
+/* -------------------------------------------------------------------------- */
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(18, 14, 14, 0);/*Funciona para colocar algun color a la barra de encabezados- INICIALMENTE TRANSPARENTE */
+  position: fixed; /* CAMBIO: de absolute a fixed para que se quede "pegado" al scroll */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  /* AÑADIDO: Transición suave para los cambios de estilo */
+  transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+/* Colores INICIALES del TEXTO y los ICONOS (blancos) */
+header .logo h2,        /* Título del logo AGROTEC */
+header nav ul li a,     /* HOME, ABOUT US, PRODUCTS, SELLERS, SAVINGS */
+header .icons a {       /* Iconos de usuario y carrito */
+    color: #ffffff; 
+    /* Transición suave para el color del texto y los iconos */
+    transition: color 0.4s ease-in-out;
+
+}
+
+/* -------------------------------------------------------------------------- */
+/* ESTADO FINAL DEL ENCABEZADO (Cuando se activa la clase 'scrolled' por JS) */
+/* -------------------------------------------------------------------------- */
+header.scrolled {
+  background-color: rgb(255, 255, 255); /*El header se vuelve blanco */
+  box-shadow: 0 2px 10px rgba(52, 46, 46, 0.847); /* Una sombra para darle un efecto de "flotar" */
+}
+
+/* Colores FINALES del TEXTO y los ICONOS (negros/oscuros) */
+header.scrolled .logo h2,
+header.scrolled nav ul li a,
+header.scrolled .icons a {
+    color: #333333; /* <-- ¡NEGRO/GRIS OSCURO! */
+}
+
+/* --- Estilos internos del header (sin cambios en su lógica de colores) --- */
+
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  border-radius: 50%; /* Esto hace que la imagen sea perfectamente circular si es cuadrada */
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+}
+
+    nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;/* Espacio entre los iconos */
+  position:relative;
+  left: 170px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+nav ul li a.active {
+  text-decoration: underline;
+}
+
+.icons {
+    display: flex; /* Para que los iconos estén en línea */
+    align-items: center; /* Para que estén centrados verticalmente si el div tiene altura */
+    gap: 15px; /* Espacio entre los iconos */
+}
+
+.icons a {
+    color: white; /* Hereda el color del padre o establece uno específico */
+    font-size: 1.9em; /* Un buen tamaño para iconos */
+    text-decoration: none; /* Quita el subrayado si es un enlace */
+}
+
+
+/* Hero Section*/
+.hero {/* esta seccion es de la imagen de fondo del home*/
+  height: 100vh;
+  background: url('Fondo\ ws.png') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box; 
+}
+
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.452);/*este de aqui sirve para oscurecer la imagen de fondo*/
+}
+
+.hero-content {/* Esta area es sobre las letras del encabezado*/
+  position: relative;
+  color: white;
+  z-index: 1;/*controla el orden de apilamiento. Determinando cuál aparece por encima o por debajo de otros*/
+  bottom: 20px; left: -280px;
+}
+
+.hero h1 { /*Seccion del titulo*/
+  font-size: 100px; /*agranda la letra */
+  font-weight: 800; /*Grosor de la letra*/
+  position: relative;
+  bottom: 20px; left: -40px;/*Sirve para mover a la derecha el texto*/
+}
+
+.hero p {
+  font-size: 50px;/*agranda la letra del slogan*/
+  margin-bottom: 10px;/*sube o baja el titulo y el slogan */
+}
+
+.hero button { /*Seccion del boton SHOP NOW*/
+  background-color: #ffa052;
+  border: none;
+  padding: 10px 25px; /*Agranda el tamaño del boton*/
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 16px;
+  position:relative;
+  top: 120px; left: 280px;/*Posicion del boton*/
+}
+
+/* FOOTER */
+footer {
+    background-color: #12250e; /* Fondo gris oscuro/azul como en la imagen */
+    color: #ecf0f1; /* Texto */
+    padding: 60px 40px 0; /* Más padding para que el contenido no esté pegado */
+    font-size: 0.9em;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* Apila el contenido principal y el copyright */
+    align-items: center; /* Centra el contenido si hay espacio */
+}
+
+.footer-content-simplified {
+    display: flex;
+    justify-content: space-between; /* Espacio entre la sección izquierda (logo) y la derecha (redes) */
+    align-items: flex-start; /* Alinea los elementos a la parte superior */
+    max-width: 1000px; /* Un ancho máximo razonable para el contenido principal */
+    width: 100%; /* Ocupa todo el ancho disponible hasta el max-width */
+    margin-bottom: 30px; /* Espacio antes del copyright */
+    flex-wrap: wrap; /* Permite que las secciones se envuelvan en pantallas pequeñas */
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el contenido a la izquierda */
+    margin-right: auto; /* Empuja el contenido a la izquierda y el footer-right a la derecha */
+    flex-basis: 350px; /* Le da un ancho base a esta sección */
+    min-width: 250px; /* Evita que se haga muy pequeña */
+}
+
+.footer-logo-agrotec {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footer-logo-agrotec img {
+    height: 100px; /* Tamaño del logo */
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.footer-logo-agrotec h3 {
+    color: #ffffff; /* Es el nombre de marca */
+    font-size: 2.5em; /* Tamaño grande */
+    font-weight: 700;
+}
+
+.footer-slogan-main {
+    color: #9a9e9f; /* Color del eslogan */
+    font-size: 1.2em;
+    font-style: italic; 
+    font-weight: 500;
+    margin-top: 5px;
+    padding-left: 115px; /* Alinea con el texto "AGROTEC" del logo */
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea los elementos a la derecha */
+    margin-left: auto; /* Empuja el contenido a la derecha */
+}
+
+.footer-follow-us {
+    color: #ffffff; /* para el título "Síguenos" */
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* --- ESTILOS PARA LOS CÍRCULOS DE LOS ICONOS SOCIALES --- */
+.social-icons-footer a {
+    display: inline-flex; 
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 50px; /* Tamaño del círculo */
+    height: 50px; /* Tamaño del círculo */
+    border-radius: 50%; /* Hace que el cuadrado sea un círculo */
+    background-color: #1A342B; /* Fondo transparente inicialmente */
+    border: none;
+    color: #F8F8F8; /* Color del icono (blanco) */
+    font-size: 1.8em; /* Tamaño del icono dentro del círculo */
+    margin-left: 15px; /* Espacio entre los círculos */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    text-decoration: none;
+}
+
+.social-icons-footer a:hover {
+   background-color: #4CAF50; /* Verde más claro al pasar el mouse */
+   color: white; /* Icono blanco sobre fondo verde más claro */
+   
+}
+
+
+/* Sección de derechos de autor en la parte inferior del footer */
+.footer-bottom-simplified {
+    width: 100%;
+    text-align: center;
+    color: #BDC3C7; /* Gris claro para el texto de copyright */
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85em;
+}
+
+/* --- Media Queries para responsividad del footer --- */
+@media (max-width: 768px) {
+    .footer-content-simplified {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-left,
+    .footer-right {
+        align-items: center;
+        margin: 0;
+    }
+
+    .footer-slogan-main {
+        padding-left: 0;
+    }
+
+    .footer-right {
+        order: 1; /* Coloca la sección de redes sociales arriba del logo en móvil */
+    }
+
+    .footer-left {
+        order: 2; /* Coloca el logo abajo */
+    }
+
+    .social-icons-footer a {
+        margin: 0 10px; /* Ajusta el margen para móviles */
+        width: 45px; /* Ligeramente más pequeños en móvil */
+        height: 45px;
+        font-size: 1.6em;
+    }
+}
