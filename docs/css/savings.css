@@ -1,0 +1,50 @@
+/* Importamos el estilo base de productos */
+@import url('products.css');
+
+/* Ajustes para los descuentos */
+.price-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: baseline;
+  margin: 8px 0;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.current-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.add-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #2b632b;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;  
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.add-btn:hover {
+  background-color: #1e441e;
+}
+
+.hero-section {
+  background: url("../img/savings/background.jpg") no-repeat center center/cover;
+  height: 350px; /* puedes ajustar la altura */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}

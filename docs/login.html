@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AGROTEC - Iniciar Sesión en tu cuenta">
+    <meta name="author" content="AGROTEC">
+    
+    <title>AGROTEC - Iniciar Sesión</title>
+    <link rel="canonical" href="https://agrotec.com/login">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/login.css">
+    
+    <style>
+        .message {
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: 500;
+            text-align: center;
+            animation: slideIn 0.3s ease;
+        }
+        
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+        
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+        
+        .message.loading {
+            color: #007bff;
+            background: #d1ecf1;
+            border: 2px solid #bee5eb;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .database-access {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .database-access:hover {
+            background: #1e7e34;
+            transform: translateY(-2px);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Ajuste para que el contenido principal no se superponga con el header fijo */
+        .main-container {
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <!-- Logo -->
+                <div class="navbar__brand">
+                    <a href="index.html" class="navbar__logo" aria-label="AGROTEC Home">
+                        <img src="img/logo.png" alt="AGROTEC Logo" class="navbar__logo-img">
+                    </a>
+                </div>
+                <!-- Navigation Menu -->
+                <ul class="navbar__menu" role="menubar">
+                    <li class="navbar__item" role="none">
+                        <a href="index.html" class="navbar__link" role="menuitem">HOME</a>
+                    </li>
+                    <li class="navbar__item" role="none">
+                        <a href="plans.html" class="navbar__link" role="menuitem">PLANS</a>
+                    </li>
+                    <li class="navbar__item" role="none">
+                        <a href="farmers.html" class="navbar__link" role="menuitem">FARMERS</a>
+                    </li>
+                    <li class="navbar__item" role="none">
+                        <a href="sellers.html" class="navbar__link" role="menuitem">SELLERS</a>
+                    </li>
+                    <li class="navbar__item" role="none">
+                        <a href="products.html" class="navbar__link" role="menuitem">PRODUCTS</a>
+                    </li>
+                    <li class="navbar__item" role="none">
+                        <a href="savings.html" class="navbar__link" role="menuitem">SAVINGS</a>
+                    </li>
+                </ul>
+                
+                <!-- User Actions -->
+                <div class="navbar__actions">
+                    <div class="navbar__dropdown">
+                        <button class="navbar__action navbar__dropdown-toggle" aria-label="User account" aria-expanded="false">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </button>
+                        <div class="navbar__dropdown-menu">
+                            <div class="navbar__dropdown-header">
+                                <div class="navbar__dropdown-user">
+                                    <div class="navbar__dropdown-avatar">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                    </div>
+                                    <div class="navbar__dropdown-info">
+                                        <span class="navbar__dropdown-name">Mi Cuenta</span>
+                                        <span class="navbar__dropdown-email">usuario@agrotec.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="navbar__dropdown-divider"></div>
+                            <ul class="navbar__dropdown-list">
+                                <li><a href="login.html" class="navbar__dropdown-link navbar__link--active">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                    Login
+                                </a></li>
+                                <li><a href="register.html" class="navbar__dropdown-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    Registro
+                                </a></li>
+                                <li><a href="#" class="navbar__dropdown-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Configuración
+                                </a></li>
+                            </ul>
+                            <div class="navbar__dropdown-divider"></div>
+                            <ul class="navbar__dropdown-list">
+                                <li><a href="#" class="navbar__dropdown-link navbar__dropdown-link--danger">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                        <polyline points="16,17 21,12 16,7"></polyline>
+                                        <line x1="21" x2="9" y1="12" y2="12"></line>
+                                    </svg>
+                                    Cerrar Sesión
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="navbar__divider">|</span>
+                    <a href="#" class="navbar__action" aria-label="Shopping cart">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="m1 1 4 4 13 0 l-1 7H6"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="navbar__toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="navbar__toggle-line"></span>
+                    <span class="navbar__toggle-line"></span>
+                    <span class="navbar__toggle-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container" role="main">
+        <!-- Image Section -->
+        <div class="image-section">
+            <img src="img/login-imagenes/fondodeagricultor.avif" alt="Agricultor trabajando en el campo" class="background-image" />
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <!-- LOGIN FORM ONLY -->
+            <div id="loginForm">
+                <h2 class="login-title">Conectar a mi cuenta</h2>
+                <p class="login-subtitle">Ingresa tu email y contraseña:</p>
+
+                <div id="loginMessage"></div>
+
+                <form id="loginFormData">
+                    <div class="form-group">
+                        <div class="input-icon">
+                            <img src="img/login-imagenes/correo.png" alt="Icono correo">
+                            <input type="email" class="form-input" placeholder="E-mail" id="loginEmail" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-icon">
+                            <img src="img/login-imagenes/password.png" alt="Icono candado">
+                            <input type="password" class="form-input" placeholder="Contraseña" id="loginPassword" required />
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn login-btn">INGRESAR</button>
+                </form>
+
+                <div class="form-links">
+                    <p>¿Nuevo cliente? <a href="register.html">Crear Cuenta</a></p>
+                    <p>¿Olvidaste tu contraseña? <a href="#" onclick="alert('Funcionalidad en desarrollo')">Recuperar contraseña</a></p>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="social-login">
+                    <button class="social-btn google-btn" onclick="alert('Funcionalidad en desarrollo')">Continuar con Google</button>
+                    <button class="social-btn facebook-btn" onclick="alert('Funcionalidad en desarrollo')">Continuar con Facebook</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="img/logo.png" alt="AGROTEC Logo" class="footer__logo">
+                    <p class="footer__tagline">Harvesting quality for all</p>
+                    <div class="footer__copyright">
+                        <p>© AGROTEC</p>
+                        <p>AGROTEC is a registered trademark of AGROTEC PANAMA S.A.</p>
+                    </div>
+                </div>
+                
+                <div class="footer__columns">
+                    <div class="footer__column">
+                        <h3 class="footer__column-title">US</h3>
+                        <ul class="footer__links">
+                            <li><a href="#" class="footer__link">About us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__column">
+                        <h3 class="footer__column-title">LOG IN</h3>
+                        <ul class="footer__links">
+                            <li><a href="register.html" class="footer__link">Create an account</a></li>
+                            <li><a href="login.html" class="footer__link">Log in</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__column">
+                        <h3 class="footer__column-title">INFORMATION</h3>
+                        <ul class="footer__links">
+                            <li><a href="#" class="footer__link">Privacy Policy</a></li>
+                            <li><a href="#" class="footer__link">Terms and Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__social">
+                    <h3 class="footer__social-title">FOLLOW US</h3>
+                    <div class="footer__social-links">
+                        <a href="#" class="footer__social-link" aria-label="Follow us on Facebook">
+                            <img src="img/home/Facebook.png" alt="Facebook" class="footer__social-icon">
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Follow us on TikTok">
+                            <img src="https://static.cdnlogo.com/logos/t/46/tiktok-icon-black.svg" alt="TikTok" class="footer__social-icon">
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Follow us on Instagram">
+                            <img src="img/home/Instagram_icon.png" alt="Instagram" class="footer__social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/docs/js/login.js"></script>
+</body>
+</html>

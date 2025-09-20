@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #2d5a3d 0%, #4a7c4e 50%, #5e8f62 100%);
+    min-height: 100vh;
+    color: white;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.subtitle {
+    background: rgba(138, 43, 226, 0.9);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px 25px;
+    width: 320px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card.featured {
+    transform: scale(1.05);
+    border: 3px solid #4a7c4e;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.card.featured:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.card-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.card.featured .card-header h2 {
+    color: #4a7c4e;
+}
+
+.description {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.price {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.amount {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.card.featured .amount {
+    color: #4a7c4e;
+}
+
+.period {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.checkmark {
+    background: #4a7c4e;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.cta-button {
+    width: 100%;
+    background: #333;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #555;
+    transform: translateY(-2px);
+}
+
+.featured-button {
+    background: #4a7c4e !important;
+}
+
+.featured-button:hover {
+    background: #3d6542 !important;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: underline;
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease;
+}
+
+.footer-link:hover {
+    opacity: 0.8;
+}
+
+.footer-link.skip {
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pricing-cards {
+        gap: 20px;
+    }
+    
+    .card {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .card.featured {
+        transform: none;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        padding: 25px 20px;
+    }
+}
+
+/* Asegurar que las cards tengan botones alineados */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* sombra nueva */
+}
+
+/* Botones dentro de cards */
+.card .cta-button {
+    margin-top: auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between; /* separa los elementos */
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* para pantallas pequeñas */
+    gap: 10px;
+}
+
+.skip-button {
+    background: #347039;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.skip-button:hover {
+    background: #3d6542;
+    transform: translateY(-2px);
+}
+
+.footer-link {
+    color: white;
+    text-decoration: underline;
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease;
+}
+
+.footer-link:hover {
+    opacity: 0.8;
+}
